@@ -1,0 +1,456 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "gilroyBold";
+  src: url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-bold-webfont.eot");
+  src: url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-bold-webfont.woff2")
+      format("woff2"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-bold-webfont.woff")
+      format("woff"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-bold-webfont.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "gilroysemibold";
+  src: url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-semibold-webfont.eot");
+  src: url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-semibold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-semibold-webfont.woff2")
+      format("woff2"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-semibold-webfont.woff")
+      format("woff"),
+    url("https://wxa.wxs.qq.com/wxad-design/fonts/gilroy-semibold-webfont.ttf")
+      format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "abchanel-corpo";
+  font-display: swap;
+  src: url("https://fonts.chanel.cn/k/29d2ee826a834270fc144dccbb2359ae46f53c3b-l.woff2")
+      format("woff2"),
+    url("https://fonts.chanel.cn/k/29d2ee826a834270fc144dccbb2359ae46f53c3b-d.woff")
+      format("woff"),
+    url("https://fonts.chanel.cn/k/29d2ee826a834270fc144dccbb2359ae46f53c3b-a.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "abchanel-corpo";
+  font-display: swap;
+  src: url("https://fonts.chanel.cn/k/64b14ed9188172fd562480b882a998c1cb8e8eb2-l.woff2")
+      format("woff2"),
+    url("https://fonts.chanel.cn/k/64b14ed9188172fd562480b882a998c1cb8e8eb2-d.woff")
+      format("woff"),
+    url("https://fonts.chanel.cn/k/64b14ed9188172fd562480b882a998c1cb8e8eb2-a.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "abchanel-corpo";
+  font-display: swap;
+  src: url("https://fonts.chanel.cn/k/4557ee3c5c7e229667c02c3e802771f4feae8659-l.woff2")
+      format("woff2"),
+    url("https://fonts.chanel.cn/k/4557ee3c5c7e229667c02c3e802771f4feae8659-d.woff")
+      format("woff"),
+    url("https://fonts.chanel.cn/k/4557ee3c5c7e229667c02c3e802771f4feae8659-a.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "abchanel-corpo";
+  font-display: swap;
+  src: url("https://fonts.chanel.cn/k/1b32c8a567ffef9b4919d90a39670b0f25b146bc-l.woff2")
+      format("woff2"),
+    url("https://fonts.chanel.cn/k/1b32c8a567ffef9b4919d90a39670b0f25b146bc-d.woff")
+      format("woff"),
+    url("https://fonts.chanel.cn/k/1b32c8a567ffef9b4919d90a39670b0f25b146bc-a.otf")
+      format("opentype");
+  font-style: normal;
+  font-weight: 200;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --tp-base-background-color: hsla(230, 5%, 90%, 1);
+  --tp-base-shadow-color: hsla(0, 0%, 0%, 0.1);
+  --tp-button-background-color: hsla(230, 7%, 75%, 1);
+  --tp-button-background-color-active: hsla(230, 7%, 60%, 1);
+  --tp-button-background-color-focus: hsla(230, 7%, 65%, 1);
+  --tp-button-background-color-hover: hsla(230, 7%, 70%, 1);
+  --tp-button-foreground-color: hsla(230, 10%, 30%, 1);
+  --tp-container-background-color: hsla(230, 15%, 30%, 0.2);
+  --tp-container-background-color-active: hsla(230, 15%, 30%, 0.32);
+  --tp-container-background-color-focus: hsla(230, 15%, 30%, 0.28);
+  --tp-container-background-color-hover: hsla(230, 15%, 30%, 0.24);
+  --tp-container-foreground-color: hsla(230, 10%, 30%, 1);
+  --tp-groove-foreground-color: hsla(230, 15%, 30%, 0.1);
+  --tp-input-background-color: hsla(230, 15%, 30%, 0.1);
+  --tp-input-background-color-active: hsla(230, 15%, 30%, 0.22);
+  --tp-input-background-color-focus: hsla(230, 15%, 30%, 0.18);
+  --tp-input-background-color-hover: hsla(230, 15%, 30%, 0.14);
+  --tp-input-foreground-color: hsla(230, 10%, 30%, 1);
+  --tp-label-foreground-color: hsla(230, 10%, 30%, 0.7);
+  --tp-monitor-background-color: hsla(230, 15%, 30%, 0.1);
+  --tp-monitor-foreground-color: hsla(230, 10%, 30%, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+[data-theme="dark"] {
+  display: none;
+}
+
+::selection {
+  color: #fff;
+  background-color: #000;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-padding-top: 6rem;
+}
+
+video {
+  background-color: #fff !important;
+}
+
+html * {
+  box-sizing: inherit;
+  margin: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html *::before,
+html *::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  background-color: hsl(0, 0%, 96%);
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+  font-family: "PingFang SC", system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html,
+body {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  flex: none;
+}
+
+pre > code {
+  display: grid;
+}
+
+code:where(:not(pre) > code) {
+  padding: 2px;
+  background-color: hsl(0, 0%, 90%);
+  border-radius: 2px;
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  min-width: 14px;
+  min-height: 14px;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-clip: content-box;
+  border: 4px solid transparent;
+  border-radius: 14px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.absolute-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-outer {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate3d(-50%, 0, 0);
+  --depth: 14.7;
+  --card-width: 300px;
+  --card-height: 450px;
+  height: var(--card-height);
+  user-select: none;
+}
+
+.scroll-wrapper {
+  position: relative;
+  width: var(--card-width);
+  height: var(--card-height);
+  margin: auto;
+  zoom: 0.7;
+}
+
+.scroll {
+  position: absolute;
+  top: 0;
+  left: calc(var(--card-height) * var(--depth) * -0.5 + var(--card-width) / 2);
+  width: calc(var(--card-height) * var(--depth));
+  height: calc(var(--card-height) * var(--depth));
+}
+
+.scroll-item {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--card-width) / 2);
+  transform: rotate(var(--rotate)) translateZ(0);
+  transform-origin: 50% calc(50% * var(--depth));
+}
+
+.scroll-item-inner {
+  position: relative;
+  display: block;
+  width: var(--card-width);
+  height: var(--card-height);
+  border-radius: 20px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.scroll-item-inner-media {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes traildot {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(200px, 0, 0);
+  }
+}
+
+@keyframes trailHeart {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  70% {
+    transform: rotate(20deg);
+  }
+}
+
+@keyframes aduiCheckboxIndicatorScale {
+  0% {
+    transform: scale(1, 1);
+  }
+  60% {
+    transform: scale(1.05, 1.05);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.animate-text {
+  opacity: 0;
+  font-size: 50px;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+.animate-text span {
+  display: inline-block;
+  position: relative;
+  -webkit-background-clip: text;
+  color: transparent;
+  line-height: 1.5;
+}
+.animate-text span:nth-of-type(odd) .bullet {
+  bottom: 0;
+  transform: scale(0) rotate(-60deg);
+}
+.animate-text span:nth-of-type(even) .bullet {
+  top: 0;
+  transform: scale(0) rotate(60deg);
+}
+.animate-text .driver {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+}
+.animate-text .driver-dash {
+  position: absolute;
+  top: calc(100% - 14px);
+  left: -5px;
+  width: 2px;
+  height: 2px;
+  border-radius: 2px;
+  opacity: 0;
+}
+.animate-text .bullet {
+  position: absolute;
+  left: -10px;
+  transform-origin: 0 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  opacity: 0;
+}
+
+.circular-text-char {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  line-height: 1;
+  transform: translate(-50%, -50%)
+    rotate(calc(var(--inner-angle) * var(--char-index)))
+    translateY(var(--radius));
+}
+
+.colorpod-animation {
+  animation: colorpod 3s cubic-bezier(0.67, 0.04, 0.37, 1) both infinite;
+}
+
+@keyframes colorpod {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  80%,
+  100% {
+    transform: translate3d(-350px, 0, 0);
+  }
+}
+
+@property --wipe-in {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --wipe-out {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.wipe-out-animation {
+  animation: 500ms ease both wxadFadeOut;
+}
+
+@keyframes wxadFadeOut {
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
+}
+
+.wipe-in-animation {
+  animation: 550ms ease both wipe-in 50ms;
+  -webkit-mask: linear-gradient(
+    90deg,
+    transparent calc(var(--wipe-in) - 50%),
+    black var(--wipe-in),
+    black 100%
+  );
+  mix-blend-mode: initial;
+}
+
+@keyframes wipe-out {
+  from {
+    --wipe-out: 0%;
+  }
+  to {
+    --wipe-out: 150%;
+  }
+}
+
+@keyframes wipe-in {
+  from {
+    --wipe-in: 100%;
+  }
+  to {
+    --wipe-in: 0%;
+  }
+}
+
+.footer-animation {
+  animation: 500ms ease 200ms both footerAnimation;
+}
+
+@keyframes footerAnimation {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(80px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0);
+    filter: blur(0);
+  }
+}
