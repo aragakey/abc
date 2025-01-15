@@ -8,7 +8,8 @@
     "build": "yarn build:content && next build",
     "build:content": "rm -rf ./_dist-content && babel ./src/content --out-dir ./_dist-content --copy-files --extensions .ts,.tsx",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "apt-get update && apt-get install -y ffmpeg"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.3",

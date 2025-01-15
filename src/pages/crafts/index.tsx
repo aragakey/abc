@@ -9,6 +9,10 @@ import path from "path"
 import ffmpeg from "fluent-ffmpeg"
 import sharp from "sharp"
 
+// 设置 ffmpeg 和 ffprobe 的路径
+ffmpeg.setFfmpegPath("/usr/bin/ffmpeg")
+ffmpeg.setFfprobePath("/usr/bin/ffprobe")
+
 import { useCallback, useEffect, useRef, useState } from "react"
 import { useIntersectionObserver } from "react-intersection-observer-hook"
 import NextLink from "next/link"
