@@ -14,12 +14,13 @@ This is a Next.js 13 (Pages Router) portfolio/blog site called "设计垂点" by
 - **Lint**: `yarn lint` (requires an `.eslintrc.json`; the repo does not include one, so `next lint` will prompt interactively on first run)
 - **Build**: `yarn build` runs `yarn build:content && next build`
 
-### Known Issues
+### Known Issues & Caveats
 
 - The `postinstall` script runs `apt-get update && apt-get install -y ffmpeg` which requires root. Use `yarn install --ignore-scripts` if `ffmpeg` is already installed (it is pre-installed on the Cloud VM).
-- The `/abc/crafts` page fails to compile in both dev and build modes because `fluent-ffmpeg` (a Node.js-only module) is imported at the top level of `src/pages/crafts/index.tsx`. This is a pre-existing code issue. All other pages (homepage, article pages) work correctly in dev mode.
-- `yarn build` also fails because the codebase has pre-existing ESLint errors (e.g., `react/no-unknown-property` for webkit video attributes). The CI workflow in `.github/workflows/deploy.yml` is present but there are no recorded CI runs.
-- No `.eslintrc.json` is committed to the repo. Running `next lint` or `next build` for the first time triggers an interactive ESLint setup prompt.
+- `next.config.mjs` includes a `webpack.resolve.fallback` config to stub `fs`, `child_process`, `net`, `tls` on the client side. This is needed because `fluent-ffmpeg` (used only in `getStaticProps` in `src/pages/crafts/index.tsx`) imports Node.js-only modules. Without this config, the dev server and build both fail.
+- No `.eslintrc.json` is committed to the repo. Running `next lint` or `next build` for the first time triggers an interactive ESLint setup prompt. The codebase has pre-existing lint errors (webkit video attributes, display name, etc.).
+- Running `next build` while `yarn dev` is running will break the dev server because both write to `.next/`. Always stop the dev server before building.
+- The build command `yarn build` works with `--no-lint` flag: `npx next build --no-lint`.
 
 ### System Dependencies
 
